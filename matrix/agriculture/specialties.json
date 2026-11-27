@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "name": "ROOTED specialty matrix: Agriculture",
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "canonical_home": "rooted-platform: matrix/agriculture/specialties.json",
   "how_to_read": {
     "required_now": "Badges the live database asks for before a business of this type can go live (public.specialty_badge_requirements_v2).",
@@ -41,6 +41,14 @@
       "nonprofit": [
         75,
         null
+      ],
+      "business": [
+        79,
+        149
+      ],
+      "care": [
+        125,
+        250
       ]
     },
     "what_plans_open": {
@@ -115,6 +123,13 @@
       "bulk": false,
       "rfq_bids": false,
       "map_priority": null
+    },
+    "COMMUNITY_GROWER": {
+      "label": "Community growers",
+      "max_plan": "premium",
+      "bulk": false,
+      "rfq_bids": false,
+      "map_priority": 40
     }
   },
   "buyers": {
@@ -123,24 +138,26 @@
       "university",
       "hospital",
       "jail",
-      "nonprofit"
+      "nonprofit",
+      "business",
+      "care"
     ],
-    "also_buy": [
+    "buyer_kinds": [
+      "INSTITUTION_KITCHEN",
+      "RESTAURANT",
+      "GROCERY_STORE",
+      "CATERER",
+      "FOOD_PROCESSOR",
+      "DISTRIBUTOR",
+      "CARE_FACILITY",
       "FOOD_HUB",
       "FOOD_COOP",
-      "MARKET",
+      "MARKET"
+    ],
+    "also_buy": [
       "members (shop)"
     ],
-    "missing_buyer_types": [
-      "restaurant",
-      "grocery store",
-      "caterer",
-      "corporate or campus dining contractor",
-      "senior living / nursing home",
-      "food processor",
-      "distributor",
-      "daycare"
-    ]
+    "missing_buyer_types": []
   },
   "specialties": [
     {
@@ -176,8 +193,9 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
-          "verified",
-          "VENDOR_FARM"
+          "INSURED",
+          "VENDOR_FARM",
+          "verified"
         ],
         "required_target": [
           "verified",
@@ -223,6 +241,7 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
           "verified"
         ],
         "required_target": [
@@ -268,6 +287,7 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
           "verified"
         ],
         "required_target": [
@@ -312,6 +332,7 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
           "verified"
         ],
         "required_target": [
@@ -357,6 +378,7 @@
       "check_window": "48h",
       "papers": {
         "required_now": [
+          "INSURED",
           "verified"
         ],
         "required_target": [
@@ -400,6 +422,8 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
+          "LICENSED",
           "verified"
         ],
         "required_target": [
@@ -445,6 +469,8 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
+          "LICENSED",
           "verified"
         ],
         "required_target": [
@@ -489,7 +515,11 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "LICENSED",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "LICENSED",
@@ -532,7 +562,10 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "INSURED"
@@ -572,7 +605,10 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "INSURED"
@@ -614,7 +650,11 @@
       },
       "check_window": "48h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "LICENSED",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "LICENSED",
@@ -630,16 +670,16 @@
       "section": "AGRICULTURE_FOOD",
       "role": "seller",
       "groups": [
-        "DIRECT_FARM_SALES"
+        "COMMUNITY_GROWER"
       ],
       "live_now": true,
       "kids_safe": true,
-      "max_plan": "premium_plus",
+      "max_plan": "premium",
       "sells": {
         "shop": true,
-        "bulk": true,
-        "rfq_bids": true,
-        "rfp_b2g": true,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
         "waste": true,
         "events": true,
         "event_vendor_spots": true,
@@ -655,14 +695,16 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
         "recommended": [
           "INSURED"
         ],
-        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan."
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan. A garden's place: surplus in the shop, Food share, volunteer days, field trips and workshops; no bulk market or bids (M418)."
       }
     },
     {
@@ -697,6 +739,8 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
+          "LICENSED",
           "verified"
         ],
         "required_target": [
@@ -742,6 +786,9 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
+          "LICENSED",
+          "safety",
           "verified"
         ],
         "required_target": [
@@ -785,7 +832,12 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "LICENSED",
+          "safety",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "LICENSED",
@@ -827,7 +879,11 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "LICENSED",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "LICENSED",
@@ -870,7 +926,12 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "LICENSED",
+          "safety",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "LICENSED",
@@ -912,7 +973,9 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -953,7 +1016,10 @@
       },
       "check_window": "24h",
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "INSURED",
+          "verified"
+        ],
         "required_target": [
           "verified",
           "INSURED"
@@ -994,6 +1060,7 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
           "verified"
         ],
         "required_target": [
@@ -1037,6 +1104,8 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
+          "LICENSED",
           "verified"
         ],
         "required_target": [
@@ -1083,6 +1152,8 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
+          "LICENSED",
           "verified"
         ],
         "required_target": [
@@ -1129,6 +1200,8 @@
       "check_window": "24h",
       "papers": {
         "required_now": [
+          "INSURED",
+          "LICENSED",
           "verified"
         ],
         "required_target": [
@@ -1173,7 +1246,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1214,7 +1289,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1255,7 +1332,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1296,7 +1375,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1337,7 +1418,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1379,9 +1462,9 @@
       "check_window": null,
       "papers": {
         "required_now": [
-          "verified",
           "community_center",
-          "COMMUNITY_VERIFIED"
+          "COMMUNITY_VERIFIED",
+          "verified"
         ],
         "required_target": [
           "verified",
@@ -1425,7 +1508,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1466,7 +1551,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1507,7 +1594,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1548,7 +1637,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1589,7 +1680,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1630,7 +1723,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1671,7 +1766,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1712,7 +1809,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1753,7 +1852,9 @@
       },
       "check_window": null,
       "papers": {
-        "required_now": [],
+        "required_now": [
+          "verified"
+        ],
         "required_target": [
           "verified"
         ],
@@ -1762,6 +1863,342 @@
         ],
         "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
       }
+    },
+    {
+      "code": "INSTITUTION_KITCHEN",
+      "label": "Institution kitchen",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer",
+      "groups": [
+        "INSTITUTION"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": null,
+      "buys": {
+        "bulk": true,
+        "rfq_post_and_award": "premium_plus",
+        "shop": true
+      },
+      "billing_type": "school, university, hospital or jail",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Buyers are checked as a real business and person (M415); they need no food license to buy."
+      },
+      "pending_migration": "M420"
+    },
+    {
+      "code": "RESTAURANT",
+      "label": "Restaurant",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer",
+      "groups": [
+        "INSTITUTION"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": null,
+      "buys": {
+        "bulk": true,
+        "rfq_post_and_award": "premium_plus",
+        "shop": true
+      },
+      "billing_type": "business",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Buyers are checked as a real business and person (M415); they need no food license to buy."
+      },
+      "pending_migration": "M420"
+    },
+    {
+      "code": "GROCERY_STORE",
+      "label": "Grocery store",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer",
+      "groups": [
+        "INSTITUTION"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": null,
+      "buys": {
+        "bulk": true,
+        "rfq_post_and_award": "premium_plus",
+        "shop": true
+      },
+      "billing_type": "business",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Buyers are checked as a real business and person (M415); they need no food license to buy."
+      },
+      "pending_migration": "M420"
+    },
+    {
+      "code": "CATERER",
+      "label": "Caterer",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer",
+      "groups": [
+        "INSTITUTION"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": null,
+      "buys": {
+        "bulk": true,
+        "rfq_post_and_award": "premium_plus",
+        "shop": true
+      },
+      "billing_type": "business",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Buyers are checked as a real business and person (M415); they need no food license to buy."
+      },
+      "pending_migration": "M420"
+    },
+    {
+      "code": "FOOD_PROCESSOR",
+      "label": "Food processor",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer",
+      "groups": [
+        "INSTITUTION"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": null,
+      "buys": {
+        "bulk": true,
+        "rfq_post_and_award": "premium_plus",
+        "shop": true
+      },
+      "billing_type": "business",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Buyers are checked as a real business and person (M415); they need no food license to buy."
+      },
+      "pending_migration": "M420"
+    },
+    {
+      "code": "DISTRIBUTOR",
+      "label": "Distributor",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer",
+      "groups": [
+        "INSTITUTION"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": null,
+      "buys": {
+        "bulk": true,
+        "rfq_post_and_award": "premium_plus",
+        "shop": true
+      },
+      "billing_type": "business",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Buyers are checked as a real business and person (M415); they need no food license to buy."
+      },
+      "pending_migration": "M420"
+    },
+    {
+      "code": "CARE_FACILITY",
+      "label": "Care facility",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer",
+      "groups": [
+        "INSTITUTION"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": null,
+      "buys": {
+        "bulk": true,
+        "rfq_post_and_award": "premium_plus",
+        "shop": true
+      },
+      "billing_type": "care",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Buyers are checked as a real business and person (M415); they need no food license to buy."
+      },
+      "pending_migration": "M420"
     }
   ],
   "public_copy_note": "Public copy: the per-type gaps (what is not yet enforced) are kept in the private platform repository, not here."
