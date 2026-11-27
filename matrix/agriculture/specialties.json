@@ -1,0 +1,1768 @@
+{
+  "schema_version": 1,
+  "name": "ROOTED specialty matrix: Agriculture",
+  "as_of": "2026-11-26",
+  "canonical_home": "rooted-platform: matrix/agriculture/specialties.json",
+  "how_to_read": {
+    "required_now": "Badges the live database asks for before a business of this type can go live (public.specialty_badge_requirements_v2).",
+    "required_target": "What ROOTED should ask for. LICENSED comes from an approved license or food permit file, INSURED from an insurance file, safety from a food safety certificate; files are checked automatically when the business name is on them and the end date is ahead (M415).",
+    "recommended": "Asked for or shown as a badge, never blocking.",
+    "state_notes_pa": "Plain-language reminders for Pennsylvania, where ROOTED starts. Not legal advice: rules change and vary by county and state.",
+    "check_window": "How long the buyer has to check goods before the seller is paid: 24h perishable, 48h standard, 3 business days for orders of $2,000 or more (rooted_policy.order_check_window_settings_v1)."
+  },
+  "plans": {
+    "vendor": {
+      "premium_monthly": 79,
+      "premium_plus_monthly": 149,
+      "yearly_discount": "20%",
+      "team_seat_monthly": {
+        "premium": 15,
+        "premium_plus": 10
+      },
+      "first_seat_free": true
+    },
+    "institution_monthly": {
+      "school": [
+        125,
+        250
+      ],
+      "university": [
+        175,
+        325
+      ],
+      "hospital": [
+        275,
+        425
+      ],
+      "jail": [
+        225,
+        375
+      ],
+      "nonprofit": [
+        75,
+        null
+      ]
+    },
+    "what_plans_open": {
+      "free": "listing, shop (5 items), events",
+      "premium": "bulk market, shop (25 items)",
+      "premium_plus": "RFQ bidding (vendors), RFQ posting and awards (institutions), shop (100 items)"
+    }
+  },
+  "service_fees": {
+    "bulk_offer": "3%, at most $150",
+    "rfq_bid": "3%, at most $150",
+    "shop_listing": "6%",
+    "event_ticket": "5% + $0.50",
+    "edu_offering": "2.5%",
+    "event_spot": "0%",
+    "plans": "0%",
+    "card_processing": "about 2.9% + $0.30, carried by the seller"
+  },
+  "groups": {
+    "PRIORITY_PRODUCER": {
+      "label": "Priority producers",
+      "max_plan": "premium_plus",
+      "bulk": true,
+      "rfq_bids": true,
+      "map_priority": 10
+    },
+    "STANDARD_VENDOR": {
+      "label": "Standard vendor",
+      "max_plan": "premium_plus",
+      "bulk": true,
+      "rfq_bids": true,
+      "map_priority": 50
+    },
+    "DIRECT_FARM_SALES": {
+      "label": "Direct farm sales",
+      "max_plan": "premium_plus",
+      "bulk": true,
+      "rfq_bids": true,
+      "map_priority": 40
+    },
+    "FOOD_STAND": {
+      "label": "Food stands",
+      "max_plan": "premium",
+      "bulk": false,
+      "rfq_bids": false,
+      "map_priority": 40
+    },
+    "MOBILE_VENDOR": {
+      "label": "Mobile vendor",
+      "max_plan": "premium",
+      "bulk": false,
+      "rfq_bids": false,
+      "map_priority": 50
+    },
+    "INSTITUTION": {
+      "label": "Institution (buyer)",
+      "max_plan": "premium_plus",
+      "bulk": true,
+      "rfq_bids": true,
+      "map_priority": 90
+    },
+    "COMMUNITY_PARTNER": {
+      "label": "Community partner",
+      "max_plan": "premium",
+      "bulk": false,
+      "rfq_bids": false,
+      "map_priority": null
+    },
+    "ANIMAL_SANCTUARY_RESCUE_REHAB": {
+      "label": "Sanctuary, rescue, rehab",
+      "max_plan": "free",
+      "bulk": false,
+      "rfq_bids": false,
+      "map_priority": null
+    }
+  },
+  "buyers": {
+    "institution_types_now": [
+      "school",
+      "university",
+      "hospital",
+      "jail",
+      "nonprofit"
+    ],
+    "also_buy": [
+      "FOOD_HUB",
+      "FOOD_COOP",
+      "MARKET",
+      "members (shop)"
+    ],
+    "missing_buyer_types": [
+      "restaurant",
+      "grocery store",
+      "caterer",
+      "corporate or campus dining contractor",
+      "senior living / nursing home",
+      "food processor",
+      "distributor",
+      "daycare"
+    ]
+  },
+  "specialties": [
+    {
+      "code": "FARM",
+      "label": "Farm",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "PRIORITY_PRODUCER",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified",
+          "VENDOR_FARM"
+        ],
+        "required_target": [
+          "verified",
+          "VENDOR_FARM",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety (GAP or food safety plan) for school and hub buyers"
+        ],
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan. Eggs: PA egg handling rules apply above small-flock limits; keep at 45°F."
+      }
+    },
+    {
+      "code": "ORCHARD",
+      "label": "Orchard",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "PRIORITY_PRODUCER",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety (GAP) for school buyers"
+        ],
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan. Fresh cider needs a food license and, sold to schools, pasteurization or a warning label."
+      }
+    },
+    {
+      "code": "URBAN_FARM",
+      "label": "Urban Farm",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "PRIORITY_PRODUCER",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety (GAP)"
+        ],
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan."
+      }
+    },
+    {
+      "code": "GREENHOUSE",
+      "label": "Greenhouse",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety (GAP)"
+        ],
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan. Nursery plants: PA nursery license."
+      }
+    },
+    {
+      "code": "APIARY",
+      "label": "Apiary",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "PRIORITY_PRODUCER",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "48h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [],
+        "state_notes_pa": "PA requires apiaries to register with the Dept of Agriculture. Honey from the beekeeper is usually license-exempt at small volume; labels must be truthful."
+      }
+    },
+    {
+      "code": "DAIRY",
+      "label": "Dairy",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "PRIORITY_PRODUCER",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": true,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety"
+        ],
+        "state_notes_pa": "Milk and dairy need a PA milk permit (raw milk has its own permit and testing); cheese makers need a food license."
+      }
+    },
+    {
+      "code": "AQUACULTURE",
+      "label": "Aquaculture",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": true,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety (seafood HACCP)"
+        ],
+        "state_notes_pa": "Fish farms need a PA aquaculture registration; processing fish needs a food license and a seafood HACCP plan."
+      }
+    },
+    {
+      "code": "RANCH",
+      "label": "Ranch",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "DIRECT_FARM_SALES"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "frozen",
+        "high_risk_food": true,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety"
+        ],
+        "state_notes_pa": "Meat sold by the cut must be processed at a USDA- or PA-inspected plant (custom-exempt meat cannot be resold). Live animal sales follow PA animal health rules."
+      }
+    },
+    {
+      "code": "U_PICK_FARM",
+      "label": "U-Pick Farm",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "DIRECT_FARM_SALES"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Visitors on the land: premises liability insurance is the main need."
+      }
+    },
+    {
+      "code": "CSA",
+      "label": "CSA (Community Supported Agriculture)",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "DIRECT_FARM_SALES"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety"
+        ],
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan."
+      }
+    },
+    {
+      "code": "VINEYARD_WINERY",
+      "label": "Vineyard & Winery",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "DIRECT_FARM_SALES"
+      ],
+      "live_now": true,
+      "kids_safe": false,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": true,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": "48h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Wine needs a federal TTB permit and a PA Limited Winery License (PLCB); selling or shipping alcohol needs age checks at delivery."
+      }
+    },
+    {
+      "code": "COMMUNITY_GARDEN",
+      "label": "Community Garden",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "DIRECT_FARM_SALES"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "INSURED"
+        ],
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan."
+      }
+    },
+    {
+      "code": "BAKERY",
+      "label": "Bakery",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety (certified food manager)"
+        ],
+        "state_notes_pa": "A home bakery needs a PA Limited Food Establishment registration; a shop needs a retail food license. Cream and custard items are high-risk and need cold holding."
+      }
+    },
+    {
+      "code": "BUTCHER",
+      "label": "Butcher",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "frozen",
+        "high_risk_food": true,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED",
+          "safety"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Retail meat cutting needs a PA retail food license; wholesale needs USDA or PA meat inspection."
+      }
+    },
+    {
+      "code": "FISH_MARKET",
+      "label": "Fish Market",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": true,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED",
+          "safety"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Retail food license; shellfish must come from a certified dealer with tags kept 90 days; seafood HACCP for processing."
+      }
+    },
+    {
+      "code": "DOCKSIDE_SEAFOOD",
+      "label": "Dockside Seafood / Fresh Catch",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": true,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety (seafood HACCP)"
+        ],
+        "state_notes_pa": "Commercial fishing license plus a dealer license to sell the catch; shellfish dealer certification for shellfish."
+      }
+    },
+    {
+      "code": "FOOD_TRUCK",
+      "label": "Food Truck",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "MOBILE_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium",
+      "sells": {
+        "shop": true,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": true,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED",
+          "safety"
+        ],
+        "recommended": [],
+        "state_notes_pa": "PA mobile food facility license (state or the local health department), a commissary agreement, a fire inspection for cooking equipment, a certified food manager, commercial auto and general liability insurance."
+      }
+    },
+    {
+      "code": "FARM_STAND",
+      "label": "Farm Stand",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "FOOD_STAND"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium",
+      "sells": {
+        "shop": true,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "INSURED"
+        ],
+        "state_notes_pa": "Raw, whole produce sold by the grower usually needs no food license in PA; washing, cutting or packing it does (PA Dept of Agriculture retail or wholesale food license). Schools and food hubs often ask for GAP or a food safety plan. Baked goods or jams at the stand need a food license or Limited Food Establishment registration."
+      }
+    },
+    {
+      "code": "FARMERS_MARKET",
+      "label": "Farmers Market",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "DIRECT_FARM_SALES"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Market organizers usually carry event liability insurance and check each vendor's own license."
+      }
+    },
+    {
+      "code": "AGRICULTURE_CANONICAL",
+      "label": "General Agriculture & Local Food",
+      "section": "AGRICULTURE_FOOD",
+      "role": "seller",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "INSURED"
+        ],
+        "recommended": [],
+        "state_notes_pa": "Catch-all type: steer businesses to a specific type so the right papers are asked for."
+      }
+    },
+    {
+      "code": "FOOD_HUB",
+      "label": "Food Hub",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer_and_seller",
+      "groups": [
+        "INSTITUTION",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety"
+        ],
+        "state_notes_pa": "Retail or wholesale food license from the PA Dept of Agriculture; cold storage rules for anything kept chilled."
+      }
+    },
+    {
+      "code": "FOOD_COOP",
+      "label": "Food Co-op",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer_and_seller",
+      "groups": [
+        "INSTITUTION",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety"
+        ],
+        "state_notes_pa": "Retail or wholesale food license from the PA Dept of Agriculture; cold storage rules for anything kept chilled."
+      }
+    },
+    {
+      "code": "MARKET",
+      "label": "Market",
+      "section": "AGRICULTURE_FOOD",
+      "role": "buyer_and_seller",
+      "groups": [
+        "INSTITUTION",
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": true,
+        "bulk": true,
+        "rfq_bids": true,
+        "rfp_b2g": true,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": true,
+        "cold_chain": "chilled",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": false
+      },
+      "check_window": "24h",
+      "papers": {
+        "required_now": [
+          "verified"
+        ],
+        "required_target": [
+          "verified",
+          "LICENSED",
+          "INSURED"
+        ],
+        "recommended": [
+          "safety"
+        ],
+        "state_notes_pa": "Retail or wholesale food license from the PA Dept of Agriculture; cold storage rules for anything kept chilled."
+      }
+    },
+    {
+      "code": "FAIRGROUND",
+      "label": "Fairground",
+      "section": "AGRICULTURE_FOOD",
+      "role": "place",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "INSURED (for hosting events)"
+        ],
+        "state_notes_pa": "Event hosting: liability insurance and the town's assembly or event permit."
+      }
+    },
+    {
+      "code": "FARM_MUSEUM",
+      "label": "Farm or agriculture museum",
+      "section": "AGRICULTURE_FOOD",
+      "role": "place",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "INSURED (for hosting events)"
+        ],
+        "state_notes_pa": "Event hosting: liability insurance and the town's assembly or event permit."
+      }
+    },
+    {
+      "code": "GRANGE_HALL",
+      "label": "Grange hall",
+      "section": "AGRICULTURE_FOOD",
+      "role": "place",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "INSURED (for hosting events)"
+        ],
+        "state_notes_pa": "Event hosting: liability insurance and the town's assembly or event permit."
+      }
+    },
+    {
+      "code": "HISTORIC_FARM",
+      "label": "Historic farm or barn",
+      "section": "AGRICULTURE_FOOD",
+      "role": "place",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "INSURED (for hosting events)"
+        ],
+        "state_notes_pa": "Event hosting: liability insurance and the town's assembly or event permit."
+      }
+    },
+    {
+      "code": "HISTORIC_MILL",
+      "label": "Historic mill",
+      "section": "AGRICULTURE_FOOD",
+      "role": "place",
+      "groups": [
+        "STANDARD_VENDOR"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium_plus",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": true,
+        "event_vendor_spots": false,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "INSURED (for hosting events)"
+        ],
+        "state_notes_pa": "Event hosting: liability insurance and the town's assembly or event permit."
+      }
+    },
+    {
+      "code": "COMMUNITY_CENTER",
+      "label": "Community Center",
+      "section": "COMMUNITY_SERVICES",
+      "role": "community_partner",
+      "groups": [
+        "COMMUNITY_PARTNER"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "premium",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": true,
+        "events": true,
+        "event_vendor_spots": true,
+        "field_trips": true
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": false,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [
+          "verified",
+          "community_center",
+          "COMMUNITY_VERIFIED"
+        ],
+        "required_target": [
+          "verified",
+          "community_center",
+          "COMMUNITY_VERIFIED"
+        ],
+        "recommended": [
+          "INSURED"
+        ],
+        "state_notes_pa": ""
+      }
+    },
+    {
+      "code": "ANIMAL_SANCTUARY",
+      "label": "Animal Sanctuary",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "FARM_ANIMAL_SANCTUARY",
+      "label": "Farm Animal Sanctuary",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "ANIMAL_RESCUE",
+      "label": "Animal Rescue",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "ANIMAL_SHELTER",
+      "label": "Animal Shelter",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "ADOPTION_CENTER",
+      "label": "Adoption Center",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "EQUINE_RESCUE_SANCTUARY",
+      "label": "Equine Rescue / Sanctuary",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "FOSTER_NETWORK",
+      "label": "Foster Network",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "HUMANE_SOCIETY",
+      "label": "Humane Society",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    },
+    {
+      "code": "WILDLIFE_REHAB",
+      "label": "Wildlife Rehab",
+      "section": "ANIMALS",
+      "role": "nonprofit",
+      "groups": [
+        "ANIMAL_SANCTUARY_RESCUE_REHAB"
+      ],
+      "live_now": true,
+      "kids_safe": true,
+      "max_plan": "free",
+      "sells": {
+        "shop": false,
+        "bulk": false,
+        "rfq_bids": false,
+        "rfp_b2g": false,
+        "waste": false,
+        "events": false,
+        "event_vendor_spots": false,
+        "field_trips": false
+      },
+      "product": {
+        "perishable": false,
+        "cold_chain": "none",
+        "high_risk_food": false,
+        "alcohol": false,
+        "live_animals": true,
+        "visitors_on_site": true
+      },
+      "check_window": null,
+      "papers": {
+        "required_now": [],
+        "required_target": [
+          "verified"
+        ],
+        "recommended": [
+          "nonprofit status paper (501(c)(3) letter)"
+        ],
+        "state_notes_pa": "Wildlife rehab needs a PA Game Commission permit; shelters and kennels need a PA kennel license."
+      }
+    }
+  ],
+  "public_copy_note": "Public copy: the per-type gaps (what is not yet enforced) are kept in the private platform repository, not here."
+}

@@ -127,3 +127,9 @@ If any pressure attempts to force a vertical live:
 Cross-Reference:
 - `ROOTED_STOP_LAYER.md`
 - `ROOTED_GOVERNANCE_INDEX.md`
+
+---
+
+## Specialty matrices
+
+What each kind of business can do and must prove, per section: see `/matrix/README.md` (Agriculture first).
